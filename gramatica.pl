@@ -73,6 +73,8 @@ deporte([Deporte|[]]):- existe_deporte(Deporte).
 padecimiento([Padecimiento|[]]):- existe_padecimiento(Padecimiento).
 
 
+
+
 % Negacion
 %
 negacion([no|[]],[]).
@@ -97,6 +99,11 @@ sintagma_nominal(Oracion,S):-pronombre(Oracion,S).
 %
 sintagma_verbal(Oracion,S):- verbo(Oracion,S).
 sintagma_verbal(Oracion,S):- verbo(Oracion,Oracion1),verbo(Oracion1,S).
+
+
+
+% Oraciones de frecuencia en que realiza actividad fisica
+%
 
 
 
