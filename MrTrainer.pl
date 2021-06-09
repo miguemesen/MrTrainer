@@ -110,4 +110,9 @@ mrTrainer:- bienvenida,
             pregunta_ejercicio(Ejercicio),
             pregunta_frecuencia_realiza_AF(Frecuencia),
             pregunta_padecimiento(Padecimiento),
-            pregunta_dias_descanso(DiasDescanso).
+            pregunta_dias_descanso(DiasDescanso),
+            write("Ejercicios: "),write(Ejercicio),nl,
+            write("Frecuencia: "),write(Frecuencia),nl,
+            write("Padecimiento: "),write(Padecimiento),nl,
+            write("Dias descanso: "),write(DiasDescanso),nl,
+            consulta(Ejercicio,Padecimiento,Frecuencia,S).

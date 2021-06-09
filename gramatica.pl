@@ -68,9 +68,9 @@ verbo([padezco|S],S).
 verbo([padecer|S],S).
 
 
-deporte([Deporte|[]]):- existe_deporte(Deporte).
+existeDeporte([Deporte|[]]):- existe_deporte(Deporte).
 
-padecimiento([Padecimiento|[]]):- existe_padecimiento(Padecimiento).
+existePadecimiento([Padecimiento|[]]):- existe_padecimiento(Padecimiento).
 
 
 
@@ -109,12 +109,12 @@ sintagma_verbal(Oracion,S):- verbo(Oracion,Oracion1),verbo(Oracion1,S).
 
 % Oraciones de deporte
 %
-oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),deporte(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),existeDeporte(S).
 
 
 % Oraciones de padecimiento
 %
-oracion(Oracion,S):-sintagma_verbal(Oracion,S),padecimiento(S).
-oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),padecimiento(S).
-oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),padecimiento(S).
-oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),padecimiento(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,S),existePadecimiento(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),existePadecimiento(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),existePadecimiento(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),existePadecimiento(S).
